@@ -1,0 +1,732 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" href="./css/all.css">
+    <link rel="stylesheet" href="./css/main.css">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF"
+        crossorigin="anonymous"></script>
+
+    <script defer src="controlador.js"></script>
+    <title>Ez Food Repartidores</title>
+</head>
+
+<body>
+    <!-- NAVBAR -->
+
+    <nav class="navbar navbar-expand-lg primary-color oculto">
+        <div class="container d-inline-block">
+            <div class="row">
+                <div class="col-3">
+                    <button class="navbar-toggler pt-3" type="button" data-toggle="collapse"
+                        data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false"
+                        aria-label="Toggle navigation">
+                        <i class="fas fa-bars fa-2x primary-color"></i>
+                    </button>
+                </div>
+                <div class="col-9">
+                    <div class="row">
+                        <div class="col titles-container">
+                            <h3 class="pt-3">Ordenes Disponibles</h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="row secondary-nav">
+            <div class="col">
+                <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+                    <div class="container mt-5">
+                        <div class="row">
+                            <div class="col-12 mt-3 ordenes-disponibles-link">
+                                <h1>
+                                    Ordenes Disponibles
+                                </h1>
+                            </div>
+                            <div class="col-12 mt-3 porEntregar-link">
+                                <h1>
+                                    Ordenes por Entregar
+                                </h1>
+                            </div>
+                            <div class="col-12 mt-3 entregadas-link">
+                                <h1>
+                                    Ordenes Entregadas
+                                </h1>
+                            </div>
+                            <div class="col-12 mt-5">
+                                <div class="row justify-content-center">
+                                    <div class="col-4 d-flex salir-link">
+                                        <i class="fas fa-sign-out-alt fa-2x"></i>
+                                        <h1 class="pl-5">
+                                            Salir
+                                        </h1>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+
+    <!-- LOGIN -->
+    <div class="login oculto">
+        <div class="container login-container">
+            <div class="row align-items-center justify-content-center login-content">
+                <div class="col-3 my-2">
+                    <img alt="user-logo" src="assets/imagenes/600px-Motorcycle_icon.svg.png" width="60px">
+                </div>
+                <div class="col-10 my-2">
+                    <input type="string" class="form-control login-input" id="exampleInputEmail1"
+                        aria-describedby="emailHelp" placeholder="Username">
+                </div>
+                <div class="col-10 my-2">
+                    <input type="string" class="form-control login-input" id="exampleInputEmail1"
+                        aria-describedby="emailHelp" placeholder="Password">
+                </div>
+                <div class="col-10 mt-5 mb-2">
+                    <button type="button" class="btn btn-light login-btn">LOGIN</button>
+                </div>
+                <div class="col-7">
+                    <a>Olvidaste tu contraseña?</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ORDENES DISPONIBLES -->
+
+    <div class="ordenes-disponibles oculto px-3 py-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 ordenes-disponibles-container">
+                    <div class="row pt-2">
+                        <div class="col-12">
+                            <div class="row">
+                                <div class="col-6">
+                                    <h6>Orden EzFood: 32130 <br>Detalles</h6>
+                                </div>
+                                <div class="col-6">
+                                    <img alt="orden" src="assets/imagenes/orden-restaurante.svg">
+                                </div>
+                            </div>
+                        </div>
+                        <hr class="divider my-2">
+                        <div class="col-12">
+                            <div class="row">
+                                <div class="col-6">
+                                    <h6>Empresa: Pizza Hut</h6>
+                                </div>
+                                <div class="col-6">
+                                    <h6>Origen: Blv. Juan Pablo 2</h6>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-6">
+                                    <h6>Direccion de envio: </h6>
+                                </div>
+                                <div class="col-6">
+                                    <h6>Residencial La Canada, casa #2 bloque BB</h6>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <div class="row justify-content-center my-2">
+                                <div class="col-5">
+                                    <button type="button" class="btn btn-warning ver-detalle-orden">Ver detalles</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Ordenes Detalles -->
+
+    <div class="ordenes-detalles oculto px-3 py-1">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 detalle-orden">
+                    <div class="row pt-2">
+                        <div class="col-12">
+                            <div class="row">
+                                <div class="col-6">
+                                    <h6>Orden EzFood: 32130 <br>Detalles</h6>
+                                </div>
+                                <div class="col-6">
+                                    <img alt="orden" src="assets/imagenes/orden-restaurante.svg">
+                                </div>
+                            </div>
+                        </div>
+                        <hr class="divider my-2">
+                        <div class="col-12 py-1">
+                            <div class="row">
+                                <div class="col-6">
+                                    <h6>Categoria:</h6>
+                                </div>
+                                <div class="col-6">
+                                    <h6><b>Restaurantes</b></h6>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 py-1">
+                            <div class="row">
+                                <div class="col-6">
+                                    <h6>Empresa:</h6>
+                                </div>
+                                <div class="col-6">
+                                    <h6><b>Pizza Hut</b></h6>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 py-1">
+                            <div class="row">
+                                <div class="col-6">
+                                    <h6>Origen:</h6>
+                                </div>
+                                <div class="col-6">
+                                    <h6><b>Blv. Juan Pablo 2</b></h6>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 py-1">
+                            <div class="row">
+                                <div class="col-6">
+                                    <h6>Direccion de envio:</h6>
+                                </div>
+                                <div class="col-6">
+                                    <h6><b>Reisdencial Palma Real</b></h6>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 py-1">
+                            <div class="row">
+                                <div class="col-6">
+                                    <h6>Detalles de envio:</h6>
+                                </div>
+                                <div class="col-6">
+                                    <h6><b>Casa #2, bloque BB continuo a pulperia las Hadas</b></h6>
+                                </div>
+                            </div>
+                        </div>
+                        <hr class="divider my-2">
+
+                        <div class="col-12 py-1">
+                            <div class="row">
+                                <div class="col-6">
+                                    <h6>Productos</h6>
+                                </div>
+                                <div class="col-6">
+                                    <div class="row justify-content-end">
+                                        <div class="col-5">
+                                            <p><b>Precio</b></p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <hr class="divider">
+
+                        <div class="col-12">
+                            <div class="row">
+                                <div class="col-9">
+                                    <p>PIZZA CALIFORNIA (1)</p>
+                                </div>
+                                <div class="col-3">
+                                    <p>LPS. 389</p>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-9">
+                                    <p>PIZZA CALIFORNIA (1)</p>
+                                </div>
+                                <div class="col-3">
+                                    <p>LPS. 389</p>
+                                </div>
+                            </div>
+                        </div>
+                        <hr class="divider">
+
+                        <div class="col-12">
+                            <div class="row justify-content-end">
+                                <div class="col-9">
+                                    <p>Total (2 productos): LPS.1,167.00</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-12">
+                            <div class="row justify-content-evenly py-1">
+                                <div class="col-5">
+                                    <button type="button" class="btn btn-success btn-orden-detalle">Tomar Orden</button>
+                                </div>
+                                <div class="col-5">
+                                    <button type="button" class="btn btn-warning btn-orden-atras">Atras</button>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ORDENES POR ENTREGAR -->
+
+    <div class="ordenes-por-entregar oculto px-3 py-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 ordenes-por-entregar-container">
+                    <div class="row pt-2">
+                        <div class="col-12">
+                            <div class="row">
+                                <div class="col-6">
+                                    <h6>Orden EzFood: 32130 <br>Detalles</h6>
+                                </div>
+                                <div class="col-6">
+                                    <img alt="orden" src="assets/imagenes/orden-restaurante.svg">
+                                </div>
+                            </div>
+                        </div>
+                        <hr class="divider my-2">
+                        <div class="col-12">
+                            <div class="row">
+                                <div class="col-6">
+                                    <h6>Empresa: Pizza Hut</h6>
+                                </div>
+                                <div class="col-6">
+                                    <h6>Origen: Blv. Juan Pablo 2</h6>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-6">
+                                    <h6>Direccion de envio: </h6>
+                                </div>
+                                <div class="col-6">
+                                    <h6>Residencial La Canada, casa #2 bloque BB</h6>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-6">
+                                    <h6>Detalles de envio: </h6>
+                                </div>
+                                <div class="col-6">
+                                    <h6>Casa #2, bloque BB continuo a pulperia las Hadas</h6>
+                                </div>
+                            </div>
+                        </div>
+                        <hr class="divider my-2">
+                        <div class="col-12">
+                            <div class="row justify-content-center my-2">
+                                <div class="col-5">
+                                    <button type="button" class="btn btn-warning por-entregar-detalles">Ver detalles</button>
+                                </div>
+                                <div class="col-5">
+                                    <div class="btn-group">
+                                        <button type="button" class="btn btn-light dropdown-toggle"
+                                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                            En Origen
+                                        </button>
+                                        <div class="dropdown-menu">
+                                            <a class="dropdown-item" href="#">Tomada</a>
+                                            <a class="dropdown-item" href="#">En camino</a>
+                                            <a class="dropdown-item" href="#">En destino</a>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ORDEN ENTREGADA -->
+
+    <div class="orden-entregada oculto px-3 py-1">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 entregada-orden">
+                    <div class="row pt-2">
+                        <div class="col-12">
+                            <div class="row">
+                                <div class="col-6">
+                                    <h6>Orden EzFood: 32130 <br>Detalles</h6>
+                                </div>
+                                <div class="col-6">
+                                    <img alt="orden" src="assets/imagenes/orden-restaurante.svg">
+                                </div>
+                            </div>
+                        </div>
+                        <hr class="divider my-2">
+                        <div class="col-12 py-1">
+                            <div class="row">
+                                <div class="col-6">
+                                    <h6>Empresa:</h6>
+                                </div>
+                                <div class="col-6">
+                                    <h6><b>Pizza Hut</b></h6>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 py-1">
+                            <div class="row">
+                                <div class="col-6">
+                                    <h6>Origen:</h6>
+                                </div>
+                                <div class="col-6">
+                                    <h6><b>Blv. Juan Pablo 2</b></h6>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 py-1">
+                            <div class="row">
+                                <div class="col-6">
+                                    <h6>Direccion de envio:</h6>
+                                </div>
+                                <div class="col-6">
+                                    <h6><b>Reisdencial Palma Real</b></h6>
+                                </div>
+                            </div>
+                        </div>
+                        <hr class="divider my-2">
+
+                        <div class="col-12 py-1">
+                            <div class="row">
+                                <div class="col-6">
+                                    <h6>Productos</h6>
+                                </div>
+                                <div class="col-6">
+                                    <div class="row justify-content-end">
+                                        <div class="col-5">
+                                            <p><b>Precio</b></p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <hr class="divider">
+
+                        <div class="col-12">
+                            <div class="row">
+                                <div class="col-9">
+                                    <p>PIZZA CALIFORNIA (1)</p>
+                                </div>
+                                <div class="col-3">
+                                    <p>LPS. 389</p>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-9">
+                                    <p>PIZZA CALIFORNIA (1)</p>
+                                </div>
+                                <div class="col-3">
+                                    <p>LPS. 389</p>
+                                </div>
+                            </div>
+                        </div>
+                        <hr class="divider">
+
+                        <div class="col-12">
+                            <div class="row justify-content-end">
+                                <div class="col-7">
+                                    <p>Sub total (12 productos): </p>
+                                </div>
+                                <div class="col-5">
+                                    <div class="row">
+                                        <div class="col-10">
+                                            <p>LPS. 1,167.00</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <hr class="divider">
+
+                        <div class="col-12">
+                            <div class="row justify-content-between">
+                                <div class="col-4">
+                                    <h6><b>Impuesto</b></h6>
+                                </div>
+                                <div class="col-3">
+                                    <p>Precio</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <hr class="divider">
+
+                        <div class="col-12">
+                            <div class="row">
+                                <div class="col-9">
+                                    <p>Impuesto sobre venta</p>
+                                </div>
+                                <div class="col-3">
+                                    <p>LPS. 35</p>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-9">
+                                    <p>Impuesto sobre Compra</p>
+                                </div>
+                                <div class="col-3">
+                                    <p>LPS. 35</p>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-9">
+                                    <p>Impuesto sobre Otros</p>
+                                </div>
+                                <div class="col-3">
+                                    <p>LPS. 35</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <hr class="divider">
+
+                        <div class="col-12">
+                            <div class="row justify-content-end">
+                                <div class="col-6">
+                                    <p>Total: LPS. 12,167.00</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <hr class="divider">
+
+                        <div class="col-12">
+                            <div class="row justify-content-between">
+                                <div class="col-4">
+                                    <h6><b>Comisiones</b></h6>
+                                </div>
+                                <div class="col-3">
+                                    <p>Precio</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <hr class="divider">
+
+                        <div class="col-12">
+                            <div class="row">
+                                <div class="col-9">
+                                    <p>Envio</p>
+                                </div>
+                                <div class="col-3">
+                                    <p>LPS. 35</p>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-9">
+                                    <p>Comision por venta</p>
+                                </div>
+                                <div class="col-3">
+                                    <p>LPS. 35</p>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-9">
+                                    <p>Propina</p>
+                                </div>
+                                <div class="col-3">
+                                    <p>LPS. 35</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <hr class="divider">
+
+                        <div class="col-12">
+                            <div class="row justify-content-end">
+                                <div class="col-12">
+                                    <p>Total de comision por envio: LPS. 12,167.00</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <hr class="divider">
+
+                        <div class="col-12">
+                            <div class="row justify-content-end">
+                                <div class="col-9">
+                                    <p>Total (2 productos): LPS.1,167.00</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-12">
+                            <div class="row justify-content-evenly pt-2 pb-3">
+                                <div class="col-6">
+                                    <button type="button" class="btn btn-success btn-finalizarOrden">Finalizar Orden</button>
+                                </div>
+                                <div class="col-6">
+                                    <button type="button" class="btn btn-warning btn-finalizarOrden-atras">Atras</button>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ORDENES ENTREGADAS -->
+
+    <div class="ordenes-entregadas oculto px-3 py-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 ordenes-entregadas-container">
+                    <div class="row pt-2">
+                        <div class="col-12">
+                            <div class="row">
+                                <div class="col-6">
+                                    <h6>Orden EzFood: 32130 <br>Detalles</h6>
+                                </div>
+                                <div class="col-6">
+                                    <img alt="orden" src="assets/imagenes/orden-restaurante.svg">
+                                </div>
+                            </div>
+                        </div>
+                        <hr class="divider my-2">
+                        <div class="col-12">
+                            <div class="row">
+                                <div class="col-6">
+                                    <h6>Empresa: Pizza Hut</h6>
+                                </div>
+                                <div class="col-6">
+                                    <h6>Origen: Blv. Juan Pablo 2</h6>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-6">
+                                    <h6>Total de entrega: </h6>
+                                </div>
+                                <div class="col-6">
+                                    <h6>LPS. 1,167.00</h6>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-6">
+                                    <h6>Total de comision: </h6>
+                                </div>
+                                <div class="col-6">
+                                    <h6>LPS. 120</h6>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-6">
+                                    <h6>Propinas: </h6>
+                                </div>
+                                <div class="col-6">
+                                    <h6>LPS. 20</h6>
+                                </div>
+                            </div>
+                        </div>
+                        <hr class="divider my-2">
+                        <div class="col-12">
+                            <div class="row justify-content-center my-2">
+                                <div class="col-5">
+                                    <button type="button" class="btn btn-warning btn-verDetalle-Entregada">Ver detalles</button>
+                                </div>
+                                <div class="col-5">
+                                    <button type="button" class="btn btn-success">Entregada</button>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <!-- FOOTER -->
+
+    <div class="footer oculto primary-color px-3 py-4">
+        <div class="container">
+            <div class="row pb-3">
+                <div class="col-12">
+                    <img src="assets/imagenes/LogoFigmaBlanco.svg" alt="logo" width="60px">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <p class="my-0">501 Residencial La Canada, Tegucigalpa</p>
+                    <p class="my-0">+504 8766-5138</p>
+                    <p class="my-0">eralejo2003@gmail.com</p>
+                </div>
+            </div>
+            <div class="row pt-3">
+                <div class="col-12">
+                    <div class="row">
+                        <div class="col-1">
+                            <a class="text-white" href="https://www.facebook.com/eralejo.molinagarcia/"
+                                target="__blank"><i class="fab fa-facebook-f"></i></a>
+                        </div>
+                        <div class="col-5">
+                            <a class="text-white" href="https://www.facebook.com/eralejo.molinagarcia/"
+                                target="__blank">Facebook</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <div class="row">
+                        <div class="col-1">
+                            <a class="text-white" href="https://www.instagram.com/stable.erick/" target="__blank"><i
+                                    class="fab fa-instagram"></i></a>
+                        </div>
+                        <div class="col-5">
+                            <a class="text-white" href="https://www.instagram.com/stable.erick/"
+                                target="__blank">Instagram</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <div class="row">
+                        <div class="col-1">
+                            <a class="text-white" href="https://www.facebook.com/eralejo.molinagarcia/"
+                                target="__blank"><i class="fab fa-twitter"></i></a>
+                        </div>
+                        <div class="col-5">
+                            <a class="text-white" href="https://www.facebook.com/eralejo.molinagarcia/"
+                                target="__blank">Twitter</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>
