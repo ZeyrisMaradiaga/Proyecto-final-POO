@@ -1,0 +1,581 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" href="./css/all.css">
+    <link rel="stylesheet" href="./css/main.css">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF"
+        crossorigin="anonymous"></script>
+
+    <script defer src="controlador.js"></script>
+    <title>Ez Food Administradores</title>
+</head>
+
+<body>
+
+    <!-- LOGIN -->
+
+    <div class="login oculto">
+        <div class="container login-container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="row justify-content-center">
+                        <div class="col-1">
+                            <img alt="Ez Food Logo" src="./assets/imagenes/LogoFigmaBlanco.svg" width="70px">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row mt-5 mb-5">
+                <div class="col-12">
+                    <div class="row justify-content-center">
+                        <div class="col-1">
+                            <img alt="Ez Food Admin Logo" src="./assets/imagenes/login-icon.svg" width="70px">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <div class="row justify-content-center">
+                        <div class="col-6">
+                            <input type="string" class="form-control login-input" id="exampleInputEmail1"
+                                aria-describedby="emailHelp" placeholder="Username">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 mt-4 mb-5">
+                    <div class="row justify-content-center">
+                        <div class="col-6">
+                            <input type="string" class="form-control login-input" id="exampleInputEmail1"
+                                aria-describedby="emailHelp" placeholder="Username">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12">
+                    <div class="row justify-content-center">
+                        <div class="col-6">
+                            <button type="button" class="btn btn-light login-btn">LOGIN</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 mt-2">
+                    <div class="row justify-content-center">
+                        <div class="col-6">
+                            <p class="text-white">Olvidaste tu contraseña?</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- SIDE-BAR -->
+
+    <div class="sideBar position-sticky oculto">
+        <div class="offcanvas offcanvas-start show vertical-sidebar" tabindex="-1" id="offcanvasExample"
+            aria-labelledby="offcanvasExampleLabel" style="visibility: visible;">
+            <div class="offcanvas-header">
+                <div class="container">
+                    <div class="row justify-content-center">
+                        <div class="col-4">
+                            <img alt="Ez Food Logo" src="./assets/imagenes/LogoFigmaBlanco.svg" width="70px">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <hr class="divider my-2">
+            <div class="offcanvas-body">
+                <div class="container">
+                    <div class="row justify-content-center">
+                        <div class="col-12">
+                            <div class="btn-group-vertical sidebar-btn-container">
+                                <button type="button" class="btn btn-primary sidebar-btn sidebar-empresas">Empresas</button>
+                                <button type="button" class="btn btn-primary sidebar-btn sidebar-productos">Productos</button>
+                                <button type="button" class="btn btn-primary sidebar-btn sidebar-motoristas">Motoristas</button>
+                                <button type="button" class="btn btn-primary sidebar-btn sidebar-ordenes">Ordenes</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="offcanvas-footer pb-3">
+                <hr class="divider mb-3">
+                <div class="container">
+                    <div class="row justify-content-center sidebar-login">
+                        <div class="col-2 px-0 pl-5">
+                            <i class="fas fa-sign-out-alt fa-2x pt-2"></i>
+                        </div>
+                        <div class="col-3 px-0">
+                            <button type="button" class="btn btn-primary sidebar-btn pt-0 pb-0">Salir</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="container-main">
+
+        <!-- NavBar -->
+
+        <div class="navBar position-sticky pb-3 oculto">
+            <div class="container px-0">
+                <nav class="navbar navbar-light bg-light justify-content-between">
+                    <div class="col-6 pl-6" style="margin-left: 20px;">
+                        <div class="row">
+                            <div class="col-2">
+                                <img alt="nav-icon" src="./assets/imagenes/navbar-icon.svg" width="30px">
+                            </div>
+                            <div class="col">
+                                <input class="form-control mr-sm-2" type="search" placeholder="Search"
+                                    aria-label="Search">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-3">
+                        <button class="btn btn-primary my-2 my-sm-0 agregar-item" type="submit" style="width: 100%;">Agregar
+                            Empresa</button>
+                    </div>
+                </nav>
+            </div>
+        </div>
+
+
+        <!-- Empresas -->
+
+        <div class="empresas oculto">
+            <table class="table table-primary empresas-tabla">
+                <thead>
+                    <tr>
+                        <th scope="col">Empresa</th>
+                        <th scope="col">Descripcion</th>
+                        <th scope="col">Rate</th>
+                        <th scope="col">Status</th>
+                        <th scope="col">Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th scope="row">Pizza Hut</th>
+                        <td>Lorem ipsum dolor sit amet.</td>
+                        <td>3.5</td>
+                        <td><button type="button" class="btn btn-primary">Activo</button></td>
+                        <td><i class="fas fa-pencil-alt px-3 lapiz-agregar"></i><i class="fa fa-trash"></i></td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Pizza Hut</th>
+                        <td>Lorem ipsum dolor sit amet.</td>
+                        <td>3.5</td>
+                        <td><button type="button" class="btn btn-primary">Activo</button></td>
+                        <td><i class="fas fa-pencil-alt px-3 lapiz-agregar"></i><i class="fa fa-trash"></i></td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Pizza Hut</th>
+                        <td>Lorem ipsum dolor sit amet.</td>
+                        <td>3.5</td>
+                        <td><button type="button" class="btn btn-light">Inactivo</button></td>
+                        <td><i class="fas fa-pencil-alt px-3 lapiz-agregar"></i><i class="fa fa-trash"></i></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- AGREGAR EMPRESA -->
+
+        <div class="agregar-empresa oculto" style="height: 100%; padding-top: 10%;">
+            <div class="container">
+                <div class="row justify-content-evenly my-5">
+                    <div class="col-5">
+                        <h6>Nombre</h6>
+                    </div>
+                    <div class="col-5">
+                        <input class="form-control mr-sm-2" type="text" placeholder="Nombre de Empresa"
+                            aria-label="Nombre de Empresa">
+                    </div>
+                </div>
+
+                <div class="row justify-content-evenly my-5">
+                    <div class="col-5">
+                        <h6>Descripcion</h6>
+                    </div>
+                    <div class="col-5">
+                        <textarea class="form-control" id="exampleFormControlTextarea1" placeholder="Descripcion de la empresa" rows="3"></textarea>
+                    </div>
+                </div>
+
+                <div class="row justify-content-evenly my-5">
+                    <div class="col-5">
+                        <h6>Direccion</h6>
+                    </div>
+                    <div class="col-5">
+                        <textarea class="form-control" id="exampleFormControlTextarea1" placeholder="Direccion de la empresa" rows="3"></textarea>
+                    </div>
+                </div>
+
+                <div class="row justify-content-evenly my-5">
+                    <div class="col-5">
+                        <h6>Foto</h6>
+                    </div>
+                    <div class="col-5">
+                        <div class="form-group">
+                            <input type="file" class="form-control-file" id="exampleFormControlFile1">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row justify-content-center my-5">
+                    <div class="col-12">
+                        <div class="row justify-content-evenly py-1">
+                            <div class="col-4">
+                                <button type="button" class="btn btn-primary empresa-agregar">Agregar Empresa</button>
+                            </div>
+                            <div class="col-3">
+                                <button type="button" class="btn btn-danger empresa-no-agregar">Cancelar</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- PRODUCTOS -->
+
+        <div class="productos oculto">
+            <table class="table table-primary productos-tabla">
+                <thead>
+                    <tr>
+                        <th scope="col">Producto</th>
+                        <th scope="col">Descripcion</th>
+                        <th scope="col">Rate</th>
+                        <th scope="col">Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th scope="row">Pizza</th>
+                        <td>Lorem ipsum dolor sit amet.</td>
+                        <td>3.5</td>
+                        <td><i class="fas fa-pencil-alt px-3 lapiz-producto"></i><i class="fa fa-trash"></i></td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Calzones</th>
+                        <td>Lorem ipsum dolor sit amet.</td>
+                        <td>3.5</td>
+                        <td><i class="fas fa-pencil-alt px-3 lapiz-producto"></i><i class="fa fa-trash"></i></td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Anillos de queso</th>
+                        <td>Lorem ipsum dolor sit amet.</td>
+                        <td>3.5</td>
+                        <td><i class="fas fa-pencil-alt px-3 lapiz-producto"></i><i class="fa fa-trash"></i></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+
+        <!-- AGREGAR PRODUCTOS -->
+
+        <div class="agregar-productos oculto" style="height: 100%; padding-top: 10%;">
+            <div class="container">
+                <div class="row justify-content-evenly my-5">
+                    <div class="col-5">
+                        <h6>Nombre</h6>
+                    </div>
+                    <div class="col-5">
+                        <input class="form-control mr-sm-2" type="text" placeholder="Nombre de Producto"
+                            aria-label="Nombre de Producto">
+                    </div>
+                </div>
+
+                <div class="row justify-content-evenly my-5">
+                    <div class="col-5">
+                        <h6>Descripcion</h6>
+                    </div>
+                    <div class="col-5">
+                        <textarea class="form-control" id="exampleFormControlTextarea1"
+                            placeholder="Descripcion del Producto" rows="3"></textarea>
+                    </div>
+                </div>
+
+                <div class="row justify-content-evenly my-5">
+                    <div class="col-5">
+                        <h6>Precio</h6>
+                    </div>
+                    <div class="col-5">
+                        <input class="form-control mr-sm-2" type="text" placeholder="Precio del Producto"
+                            aria-label="Precio de Producto">
+                    </div>
+                </div>
+
+                <div class="row justify-content-evenly my-5">
+                    <div class="col-5">
+                        <h6>Foto</h6>
+                    </div>
+                    <div class="col-5">
+                        <div class="form-group">
+                            <input type="file" class="form-control-file" id="exampleFormControlFile1">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row justify-content-center my-5">
+                    <div class="col-12">
+                        <div class="row justify-content-evenly py-1">
+                            <div class="col-4">
+                                <button type="button" class="btn btn-primary agregar-producto">Agregar Producto</button>
+                            </div>
+                            <div class="col-3">
+                                <button type="button" class="btn btn-danger agregar-no-producto">Cancelar</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- MOTORISTAS -->
+
+        <div class="motoristas oculto">
+            <table class="table table-primary motoristas-tabla">
+                <thead>
+                    <tr>
+                        <th scope="col">Motorista</th>
+                        <th scope="col">Descripcion</th>
+                        <th scope="col">Rate</th>
+                        <th scope="col">Status</th>
+                        <th scope="col">Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th scope="row">Erick Molina</th>
+                        <td>Lorem ipsum dolor sit amet.</td>
+                        <td>3.5</td>
+                        <td><button type="button" class="btn btn-light">Inactivo</button></td>
+                        <td><i class="fas fa-pencil-alt px-3 lapiz-motorista"></i><i class="fa fa-trash"></i></td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Alejandro Garcia</th>
+                        <td>Lorem ipsum dolor sit amet.</td>
+                        <td>3.5</td>
+                        <td><button type="button" class="btn btn-primary">Activo</button></td>
+                        <td><i class="fas fa-pencil-alt px-3 lapiz-motorista"></i><i class="fa fa-trash"></i></td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Isaac Salomon</th>
+                        <td>Lorem ipsum dolor sit amet.</td>
+                        <td>3.5</td>
+                        <td><button type="button" class="btn btn-warning">Pendiente</button></td>
+                        <td><i class="fas fa-pencil-alt px-3 lapiz-motorista"></i><i class="fa fa-trash"></i></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- AGREGAR MOTORISTA -->
+
+        <div class="agregar-motorista oculto" style="height: 100%; padding-top: 10%;">
+            <div class="container">
+                <div class="row justify-content-evenly my-5">
+                    <div class="col-5">
+                        <h6>Nombre</h6>
+                    </div>
+                    <div class="col-5">
+                        <input class="form-control mr-sm-2" type="text" placeholder="Nombre del Motorista"
+                            aria-label="Nombre del Motorista">
+                    </div>
+                </div>
+
+                <div class="row justify-content-evenly my-5">
+                    <div class="col-5">
+                        <h6>Descripcion</h6>
+                    </div>
+                    <div class="col-5">
+                        <textarea class="form-control" id="exampleFormControlTextarea1"
+                            placeholder="Descripcion del empleado" rows="3"></textarea>
+                    </div>
+                </div>
+
+                <div class="row justify-content-evenly my-5">
+                    <div class="col-5">
+                        <h6>Edad</h6>
+                    </div>
+                    <div class="col-5">
+                        <textarea class="form-control" id="exampleFormControlTextarea1"
+                            placeholder="Edad del empleado" rows="1"></textarea>
+                    </div>
+                </div>
+
+                <div class="row justify-content-evenly my-5">
+                    <div class="col-5">
+                        <h6>Foto</h6>
+                    </div>
+                    <div class="col-5">
+                        <div class="form-group">
+                            <input type="file" class="form-control-file" id="exampleFormControlFile1">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row justify-content-center my-5">
+                    <div class="col-12">
+                        <div class="row justify-content-evenly py-1">
+                            <div class="col-4">
+                                <button type="button" class="btn btn-primary agregarEmpleado">Agregar Empleado</button>
+                            </div>
+                            <div class="col-3">
+                                <button type="button" class="btn btn-danger noAgregarEmpleado">Cancelar</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ORDENES -->
+
+        <div class="ordenes oculto">
+            <table class="table table-primary ordenes-tabla">
+                <thead>
+                    <tr>
+                        <th scope="col">Orden</th>
+                        <th scope="col">Descripcion</th>
+                        <th scope="col">Precio</th>
+                        <th scope="col">Status</th>
+                        <th scope="col">Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th scope="row">12345</th>
+                        <td>Lorem ipsum dolor sit amet.</td>
+                        <td>3,500.00</td>
+                        <td><button type="button" class="btn btn-light">En camino</button></td>
+                        <td><i class="fas fa-pencil-alt px-3 editar-orden"></i><i class="fa fa-trash"></i></td>
+                    </tr>
+                    <tr>
+                        <th scope="row">54321</th>
+                        <td>Lorem ipsum dolor sit amet.</td>
+                        <td>12,500.00</td>
+                        <td><button type="button" class="btn btn-primary">Entregada</button></td>
+                        <td><i class="fas fa-pencil-alt px-3 editar-orden"></i><i class="fa fa-trash"></i></td>
+                    </tr>
+                    <tr>
+                        <th scope="row">55555</th>
+                        <td>Lorem ipsum dolor sit amet.</td>
+                        <td>1,500.00</td>
+                        <td><button type="button" class="btn btn-warning">En origen</button></td>
+                        <td><i class="fas fa-pencil-alt px-3 editar-orden"></i><i class="fa fa-trash"></i></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- ASIGNAR ORDEN -->
+
+        <div class="asignar-orden oculto" style="height: 100%; padding-top: 10%;">
+            <div class="container">
+                <div class="row justify-content-evenly my-5">
+                    <div class="col-5">
+                        <h6>Nombre</h6>
+                    </div>
+                    <div class="col-5">
+                        <input class="form-control mr-sm-2" type="text" placeholder="ID de la orden"
+                            aria-label="ID de la orden">
+                    </div>
+                </div>
+
+                <div class="row justify-content-evenly my-5">
+                    <div class="col-5">
+                        <h6>Pedido</h6>
+                    </div>
+                    <div class="col-5">
+                        <textarea class="form-control" id="exampleFormControlTextarea1"
+                            placeholder="Descripcion del pedido" rows="3"></textarea>
+                    </div>
+                </div>
+
+                <div class="row justify-content-evenly my-5">
+                    <div class="col-5">
+                        <h6>Status</h6>
+                    </div>
+                    <div class="col-5">
+                        <textarea class="form-control" id="exampleFormControlTextarea1" placeholder="Status del pedido"
+                            rows="1"></textarea>
+                    </div>
+                </div>
+
+                <div class="row justify-content-evenly my-5">
+                    <div class="col-5">
+                        <h6>Precio</h6>
+                    </div>
+                    <div class="col-5">
+                        <input class="form-control mr-sm-2" type="text" placeholder="Precio del pedido"
+                            aria-label="Precio del pedido">
+                    </div>
+                </div>
+
+                <div class="row justify-content-evenly my-5">
+                    <div class="col-5">
+                        <h6>Direccion</h6>
+                    </div>
+                    <div class="col-5">
+                        <input class="form-control mr-sm-2" type="text" placeholder="Direccion del pedido"
+                            aria-label="Direccion del pedido">
+                    </div>
+                </div>
+
+                <div class="row justify-content-evenly my-5">
+                    <div class="col-5">
+                        <h6>Repartidor</h6>
+                    </div>
+                    <div class="col-5">
+                        <button type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown"
+                            aria-haspopup="true" aria-expanded="false">
+                            Erick Molina
+                        </button>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" href="#">Alejandro Garcia</a>
+                            <a class="dropdown-item" href="#">Isaac Lazo</a>
+                            <a class="dropdown-item" href="#">Daniel Santos</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row justify-content-center my-5">
+                    <div class="col-12">
+                        <div class="row justify-content-evenly py-1">
+                            <div class="col-4">
+                                <button type="button" class="btn btn-primary btn-modificar-orden">Agregar Orden</button>
+                            </div>
+                            <div class="col-3">
+                                <button type="button" class="btn btn-danger btn-no-modificar-orden">Cancelar</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+
+
+</body>
+
+</html>

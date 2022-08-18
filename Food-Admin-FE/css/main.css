@@ -1,0 +1,60 @@
+body {
+    height: 100vh;
+    --bs-bg-opacity: 1;
+    background-color: rgba(var(--bs-light-rgb), var(--bs-bg-opacity)) !important;
+}
+
+.login {
+    height: 100%;
+    background-color: #14274A;
+}
+
+.login-container {
+    padding-top: 15vh;
+}
+
+.login-input {
+    background-color: transparent;
+}
+
+.login-btn {
+    width: 100%;
+}
+
+.vertical-sidebar {
+    background-color: #14274A;
+    color: white;
+}
+
+.divider {
+    border-top: 2px solid white;
+}
+
+.sidebar-btn {
+    background-color: #14274A;
+    color: white;
+    border: 0;
+    font-weight: 600;
+    font-size: 1.5rem;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.sidebar-btn::after,
+.sidebar-btn:active,
+.sidebar-btn:hover {
+    background-color: #0d6efd;
+}
+
+.sidebar-btn-container {
+    width: 100%;
+}
+
+.container-main {
+    margin-left: 400px;
+    height: 100%;
+}
+
+.oculto {
+    display: none;
+}
